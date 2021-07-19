@@ -1,0 +1,29 @@
+connector:
+  type:       pubsub
+  packaged:   true
+  source:     true
+  sink:       false
+  lookup:     false
+  properties:
+    - key:          connector
+      required:      true
+      defaultValue:  pubsub
+      definesFormat:  false
+      description:   Must be set to 'pubsub' to configure this connector.
+    - key:          format
+      required:      true
+      defaultValue:  json
+      definesFormat:  true
+      description:   Defines the format identifier for encoding data. The identifier is used to discover a suitable format factory.
+    - key:          projectName
+      required:      false
+      defaultValue:  myProj
+      definesFormat: # true if this property defines a format used by the connector
+      description:   topic project
+    - key:           topic
+      required:      true
+      defaultValue:
+      definesFormat: # true if this property defines a format used by the connector
+      description:   topic to read from
+  supportedFormats:
+    - json
