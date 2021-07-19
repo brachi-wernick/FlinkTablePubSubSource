@@ -1,0 +1,5 @@
+FROM registry.ververica.com/v2.5/vvp-gateway:2.5.0
+USER root
+RUN mkdir -p sql/opt/connectors/pubsub/
+COPY pubsub-meta.yaml /vvp/sql/opt/connectors/pubsub/connector-meta.yaml
+COPY target/pubsub-table-source-1.0-SNAPSHOT.jar /vvp/sql/opt/connectors/pubsub/pubsub-table-source-1.0-SNAPSHOT.jar
